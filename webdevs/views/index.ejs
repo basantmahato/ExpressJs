@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100%;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 Not Found</title>
+</head>
+<body style="
+    height: 100%;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f7f7f7; /* Very light grey background */
+    color: #333; /* Dark text */
+    font-family: Arial, sans-serif;
+    text-align: center;
+">
+    <div class="container" style="
+        padding: 40px 20px;
+        max-width: 400px;
+        width: 90%;
+        background-color: #ffffff; /* White card */
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    ">
+        <h1 class="error-code" style="
+            font-size: 6em;
+            margin: 0 0 10px;
+            color: #d9534f; /* Muted Red for the number */
+            font-weight: 300; /* Lighter weight for a minimal look */
+        ">
+            404
+        </h1>
+        <h2 class="error-message" style="
+            font-size: 1.5em;
+            margin: 0 0 15px;
+            color: #555;
+            font-weight: 400;
+        ">
+            Page Not Found
+        </h2>
+        <p class="description" style="
+            font-size: 0.95em;
+            margin-bottom: 30px;
+            line-height: 1.6;
+            color: #777;
+        ">
+            The page you requested might have been moved, deleted, or never existed.
+        </p>
+        
+        <a href="/" class="home-link" style="
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #5cb85c; /* Muted Green button */
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 0.9em;
+            font-weight: 600;
+            transition: background-color 0.2s;
+            border: 1px solid #4cae4c; /* Border for definition */
+        "
+        onmouseover="this.style.backgroundColor='#449d44'; this.style.boxShadow='0 2px 5px rgba(0, 0, 0, 0.2)'"
+        onmouseout="this.style.backgroundColor='#5cb85c'; this.style.boxShadow='none'"
+        >
+            Go to Homepage <%= locals.text %>
+        </a>
+    </div>
+</body>
+</html>
