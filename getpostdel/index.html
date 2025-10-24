@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Management</title>
+</head>
+<body>
+    <h2>Users</h2>
+    <ul id="usersList"></ul>
+
+    <h3>Add User</h3>
+    <form id="addUserForm">
+        <input type="number" id="id" placeholder="ID" required>
+        <input type="text" id="name" placeholder="Name" required>
+        <input type="number" id="roll" placeholder="Roll No" required>
+        <button type="submit">Add User</button>
+    </form>
+
+    <h3>Delete User</h3>
+    <input type="number" id="deleteId" placeholder="User ID">
+    <button onclick="deleteUser()">Delete User</button>
+
+    <script src="main.js"></script>
+</body>
+</html>

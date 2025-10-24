@@ -1,0 +1,82 @@
+/* Container Styling */
+.uploader-container {
+    padding: 20px;
+    max-width: 600px;
+    margin: 20px auto;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.uploader-container h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #333;
+}
+
+/* Form Layout */
+.uploader-form {
+    display: flex;
+    flex-direction: column; 
+    gap: 15px;
+}
+
+/* Input and Textarea Base Style */
+.uploader-input,
+.uploader-textarea {
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box; /* Important for consistent padding/border within width */
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.uploader-input:focus,
+.uploader-textarea:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+    outline: none;
+}
+
+/* Textarea Specifics */
+.uploader-textarea {
+    resize: vertical;
+    min-height: 90px;
+}
+
+/* Button Styling */
+.uploader-button {
+    padding: 12px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
+    transition: background-color 0.3s, opacity 0.3s;
+}
+
+.uploader-button:hover:not(:disabled) {
+    background-color: #0056b3;
+}
+
+.uploader-button:disabled {
+    background-color: #a0c3e6; /* Lighter color for disabled state */
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+/* Message Styling */
+.uploader-message {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 4px;
+    text-align: center;
+    font-weight: bold;
+    color: #333;
+    background-color: #e9ecef;
+}
