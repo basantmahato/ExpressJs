@@ -1,0 +1,162 @@
+/* style.css */
+
+/* --- Global Styles & Box Sizing --- */
+*, *::before, *::after {
+    box-sizing: border-box; /* Makes padding and border included in the element's total width and height */
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f9;
+    color: #333;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+}
+
+/* --- Headings --- */
+h2, h3 {
+    text-align: center;
+    color: #007bff;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    width: 100%; /* Ensure headings take full width in the centered layout */
+    max-width: 600px;
+}
+
+/* --- User List (ul) --- */
+#usersList {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+    max-width: 600px; /* Limit the width for better readability on large screens */
+    margin-bottom: 30px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#usersList li {
+    padding: 10px 15px;
+    border-bottom: 1px solid #eee;
+    transition: background-color 0.3s;
+}
+
+#usersList li:last-child {
+    border-bottom: none;
+}
+
+#usersList li:hover {
+    background-color: #f9f9f9;
+}
+
+/* --- Form and Input Styles (Mobile First) --- */
+
+/* Applying to the form and the delete section */
+#addUserForm, #deleteId + button, #deleteId {
+    width: 100%;
+    max-width: 400px; /* Max width for form elements */
+    margin: 8px 0;
+}
+
+#addUserForm {
+    display: flex;
+    flex-direction: column; /* Stack inputs vertically on mobile */
+    gap: 10px;
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+input[type="text"], input[type="number"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus, input[type="number"]:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #28a745; /* Success color for Add */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+button:active {
+    transform: scale(0.99);
+}
+
+/* Specific styling for the Delete button */
+button[onclick="deleteUser()"] {
+    background-color: #dc3545; /* Danger color for Delete */
+    margin-bottom: 30px;
+}
+
+button[onclick="deleteUser()"]:hover {
+    background-color: #c82333;
+}
+
+/* --- Responsive Layout for Tablets and Desktops (Min-width 600px) --- */
+@media (min-width: 600px) {
+    body {
+        padding: 40px;
+    }
+
+    /* Horizontal layout for the Add User form on wider screens */
+    #addUserForm {
+        flex-direction: row;
+        flex-wrap: wrap; /* Allows inputs to wrap if necessary, though not strictly needed here */
+        justify-content: space-between;
+        gap: 15px;
+    }
+
+    /* Make inputs take equal space in the row */
+    #addUserForm input {
+        flex: 1 1 20%; /* Grow, shrink, and base width of 20% (allowing for gap) */
+        min-width: 120px; /* Ensure inputs don't get too small */
+    }
+
+    #addUserForm button {
+        flex: 1 1 auto; /* Button can take remaining space or grow */
+    }
+
+    /* Grouping Delete User elements */
+    .delete-section {
+        display: flex;
+        gap: 10px;
+        width: 100%;
+        max-width: 400px;
+        align-items: center;
+    }
+
+    #deleteId {
+        flex-grow: 1; /* Input takes up most of the space */
+        margin: 0;
+    }
+
+    button[onclick="deleteUser()"] {
+        width: auto; /* Button size adjusts to content */
+        margin: 0;
+    }
+}
