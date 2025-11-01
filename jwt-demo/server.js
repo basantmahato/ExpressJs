@@ -11,7 +11,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-// Mount routes
+
 app.use('/api/users', userRoutes);
 
 app.listen(process.env.PORT, () => {

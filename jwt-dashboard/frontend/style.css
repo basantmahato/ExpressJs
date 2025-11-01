@@ -1,0 +1,105 @@
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(135deg, #5ee7df 0%, #b490ca 100%);
+    min-height: 100vh;
+    margin: 0;
+  }
+  
+  .container {
+    width: 350px;
+    margin: 80px auto;
+    padding: 32px 30px 30px 30px;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px 0 rgba(74,144,226,0.08), 0 2px 8px #b490ca22;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: box-shadow 0.25s;
+  }
+  
+  .container:hover {
+    box-shadow: 0 8px 40px 0 rgba(74,144,226,0.19), 0 2px 14px #b490ca44;
+  }
+  
+  h2 {
+    margin-top: 0;
+    font-size: 2.2em;
+    color: #4a90e2;
+    letter-spacing: 2px;
+    font-weight: 700;
+  }
+  
+  form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 14px;
+  }
+  
+  input {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1.5px solid #e6e6e6;
+    font-size: 1.05em;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    outline: none;
+  }
+  
+  input:focus {
+    border-color: #4a90e2;
+    box-shadow: 0 2px 12px #4a90e233;
+  }
+  
+  button {
+    margin-top: 8px;
+    background: linear-gradient(90deg, #4a90e2 70%, #b490ca 100%);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 0;
+    font-size: 1.12em;
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer;
+    box-shadow: 0 2px 8px #4a90e255;
+    transition: background 0.2s, box-shadow 0.2s;
+  }
+  
+  button:hover, button:focus {
+    background: linear-gradient(-90deg, #b490ca 40%, #4a90e2 100%);
+    box-shadow: 0 4px 16px #b490ca55;
+  }
+  
+  a {
+    color: #b490ca;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+  
+  a:hover {
+    color: #4a90e2;
+  }
+  
+  #loginMsg, #registerMsg, #dashboardMsg {
+    margin-top: 12px;
+    color: #b32d2e;
+    font-size: 1em;
+    min-height: 24px;
+    text-align: center;
+  }
+  
+  @media (max-width: 500px) {
+    .container {
+      width: 97vw;
+      min-width: 0;
+      padding: 18px 8vw;
+      margin: 40px 0;
+    }
+    h2 {
+      font-size: 1.5em;
+    }
+  }
+  

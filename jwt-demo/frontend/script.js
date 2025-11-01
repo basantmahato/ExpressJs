@@ -1,10 +1,9 @@
-// Base URL for your backend API
-const API_URL = 'http://localhost:3000'; // Keep base URL
+const API_URL = 'http://localhost:3000'; 
 
-// Store JWT token in memory
+ // JWT 
 let authToken = null;
 
-// Get DOM elements
+
 const registerForm = document.getElementById('registerForm');
 const loginForm = document.getElementById('loginForm');
 const logoutBtn = document.getElementById('logoutBtn');
@@ -12,13 +11,13 @@ const registerSection = document.getElementById('registerSection');
 const loginSection = document.getElementById('loginSection');
 const profileSection = document.getElementById('profileSection');
 
-// Helper function to show messages
+
 function showMessage(elementId, message, isSuccess) {
   const messageEl = document.getElementById(elementId);
   messageEl.textContent = message;
   messageEl.className = `message ${isSuccess ? 'success' : 'error'}`;
   
-  // Clear message after 5 seconds
+
   setTimeout(() => {
     messageEl.textContent = '';
     messageEl.className = 'message';
@@ -33,7 +32,7 @@ registerForm.addEventListener('submit', async (e) => {
   const password = document.getElementById('regPassword').value;
   
   try {
-    // FIX: Changed to /api/users/register
+   
     const response = await fetch(`${API_URL}/api/users/register`, {
       method: 'POST',
       headers: {
@@ -63,7 +62,7 @@ loginForm.addEventListener('submit', async (e) => {
   const password = document.getElementById('loginPassword').value;
   
   try {
-    // FIX: Changed to /api/users/login
+   
     const response = await fetch(`${API_URL}/api/users/login`, {
       method: 'POST',
       headers: {
@@ -80,7 +79,7 @@ loginForm.addEventListener('submit', async (e) => {
       showMessage('loginMessage', data.message, true);
       loginForm.reset();
       
-      // Load profile after successful login
+    
       setTimeout(() => {
         loadProfile();
       }, 1000);
@@ -92,14 +91,14 @@ loginForm.addEventListener('submit', async (e) => {
   }
 });
 
-// Load user profile
+
 async function loadProfile() {
   if (!authToken) {
     return;
   }
   
   try {
-    // FIX: Changed to /api/users/profile
+  
     const response = await fetch(`${API_URL}/api/users/profile`, {
       method: 'GET',
       headers: {
@@ -110,14 +109,14 @@ async function loadProfile() {
     const data = await response.json();
     
     if (response.ok) {
-      // Hide register and login sections
+
       registerSection.classList.add('hidden');
       loginSection.classList.add('hidden');
       
-      // Show profile section
+     
       profileSection.classList.remove('hidden');
       
-      // Display profile data
+
       document.getElementById('profileData').innerHTML = `
         <p><strong>Username:</strong> ${data.user.username}</p>
         <p><strong>Token Issued:</strong> ${new Date(data.user.iat * 1000).toLocaleString()}</p>
@@ -134,20 +133,18 @@ async function loadProfile() {
   }
 }
 
-// Logout
 logoutBtn.addEventListener('click', logout);
 
 function logout() {
   authToken = null;
-  
-  // Show register and login sections
+
   registerSection.classList.remove('hidden');
   loginSection.classList.remove('hidden');
   
-  // Hide profile section
+
   profileSection.classList.add('hidden');
   
-  // Clear forms
+
   registerForm.reset();
   loginForm.reset();
 }
